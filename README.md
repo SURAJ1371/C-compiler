@@ -1,4 +1,4 @@
-# C-compiler
+# C Compiler
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -37,6 +37,12 @@ typedef enum {
     AST_WHILE_STATEMENT,
     AST_FUNCTION_DEFINITION,
 } ast_node_type;
+
+// Token structure
+typedef struct token {
+    token_type type;
+    char* value;
+} token_t;
 
 // AST node structure
 typedef struct ast_node {
@@ -78,6 +84,27 @@ void generate_machine_code(ast_node_t* ast) {
     }
 }
 
+// Lexical analysis
+token_t* lex(char* program) {
+    token_t* tokens = malloc(100 * sizeof(token_t)); // assuming max 100 tokens
+    int token_index = 0;
+
+    // Lexical analysis implementation here
+    // ...
+
+    return tokens;
+}
+
+// Syntax analysis
+ast_node_t* parse(token_t* tokens) {
+    ast_node_t* ast = malloc(sizeof(ast_node_t)); // assuming one AST node
+
+    // Syntax analysis implementation here
+    // ...
+
+    return ast;
+}
+
 int main() {
     // Example C program
     char* program = "int main() { int x = 5; while (x < 10) { x = x + 1; } return 0; }";
@@ -112,6 +139,3 @@ int main() {
 
     return 0;
 }
-
-
-
